@@ -46,15 +46,25 @@ export const Entry = ( { Name, Type } ) => {
 }
 
 
-export const UserPf = () => {
+export const UserPf = ( { User }) => {
     return (
         <div className='UserPf'>
             <div className="circle">
                 <div className="circleImg">
-
                 </div>
+            </div>
+            <div className="NamePf">
+                <h3>Bienvenido</h3>
+                <h2>{ User }</h2>
             </div>
         </div>
     )
 }
 
+export const Reciente = () => {
+    return (
+        <div className='GasUnit'>
+            
+        </div>
+    )
+}

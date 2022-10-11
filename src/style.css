@@ -6,6 +6,21 @@
     --ter-color: #044C7C;
 }
 
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: rgba(180, 180, 180, 0.5);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--ter-color);
+    border-radius: 20px;
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -297,11 +312,11 @@ form{
 }
 
 .UserPf{
-    position: relative;
+    position: absolute;
     width: 33%;
     height: 13%;
-    /* background-color: blueviolet; */
     margin: 13px;
+    display: flex;
 }
 
 .circle{
@@ -310,7 +325,7 @@ form{
     background-color: none;
     border-radius: 100%;
     border: rgba(255, 255, 255, 0.35) solid 2px;
-    position: absolute;
+    position: relative;
     align-items: center;
     align-content: center;
     justify-content: center;
@@ -318,23 +333,52 @@ form{
 }
 
 .circleImg{
-    position: relative;
+    position: absolute;
     border: rgba(255, 255, 255, 0.35) solid 2px;
     width: 84%;
     height: 84%;
     border-radius: 100%;
     margin: 8%;
     background-image: url(Img/PFP.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
+.NamePf{
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    /* background-color: #047c28; */
+    right: 0%;
+    display: grid;
+    align-content: center;
+}
+
+.NamePf h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2vh;
+    line-height: 14px;
+    color: #FFFFFF;
+    opacity: 0.6;
+}
+
+.NamePf h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.5vh;
+    color: white;
+}
 
 
 .BalanceDisp{
     position: absolute;
-    height: 60%;
+    height: 63%;
     width: 80%;
     left: 10%;
-    top: 25%;
+    top: 22%;
 }
 
 .BalanceCant{
@@ -358,57 +402,80 @@ form{
     bottom: 0px;
     }
 
-    .BalanceMenu li{
-        list-style: none;
-        position: relative;
-        height: calc(40vh/5);
-        width: 60px;
-    }
-    
-    .BalanceMenu li a{
-        position: relative;
-        display: grid;
-        justify-content: center;
-        justify-items: center;
-        grid-row: auto;
-        width: 100%;
-        text-align: center;
-        font-family: Poppins;
-        text-decoration: none;
-    }
-    
-    .BalanceMenu li a i{
-        background-color: white;
-        border-radius: 20px;
-        width: 100px;
-        height: 100px;
-        position: relative;
-        display: block;
-        line-height: 100px;
-        font-size: 3em;
-        transition: 0.5s;
-        color:var(--ter-color)
-    }
+.BalanceMenu li{
+    list-style: none;
+    position: relative;
+    height: calc(40vh/5);
+    width: 60px;
+}
 
-    .BalanceMenu li a .Navtext{
-        line-height: 50px;
-        position: relative;
-        color: white;
-        padding: 2px 7px;
-        border-radius: 12px;
-        font-weight: 400;
-        font-size: 18px;
-        letter-spacing: 0.05cm;
-        transition: 0.5s;
-        opacity: 1;
-    }
+.BalanceMenu li a{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-row: auto;
+    width: 100%;
+    text-align: center;
+    font-family: Poppins;
+    text-decoration: none;
+}
+
+.BalanceMenu li a i{
+    background-color: white;
+    border-radius: 20px;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: block;
+    line-height: 100px;
+    font-size: 3em;
+    transition: 0.5s;
+    color:var(--ter-color)
+}
+
+.BalanceMenu li a .Navtext{
+    line-height: 50px;
+    position: relative;
+    color: white;
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.05cm;
+    transition: 0.5s;
+    opacity: 1;
+}
 
         /*-------Gastos recientes -------*/
 
 .GasRec{
     position: relative;
-    background-color: red;
+    background-color: white;
     height: 100vh;
     width: 40vw;
     border-radius: 30px 0 0 30px;
+}
+
+.GasRec h1{
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 5%;
+    text-align: center;
+}
+
+.GasCont{
+    position: relative;
+    width: 100%;
+    height: 80%;
+    padding-top: 1rem;;
+    overflow-y: scroll;
+}
+
+.GasUnit{
+    background-color: var(--ter-color);
+    width: 90%;
+    height: 10%;
+    border-radius: 15px;
+    margin: 6% auto;
 }
