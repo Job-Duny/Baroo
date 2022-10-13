@@ -29,6 +29,7 @@
 
 body {
     font-family: Poppins;
+    overflow: hidden;
 }
 
 h1 {
@@ -250,6 +251,7 @@ form{
 }
 
 .NavBarr ul{
+
     display: grid;
     height: 40vh;
 }
@@ -341,7 +343,9 @@ form{
     margin: 8%;
     background-image: url(Img/PFP.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .NamePf{
@@ -464,18 +468,50 @@ form{
     text-align: center;
 }
 
-.GasCont{
-    position: relative;
+.GasRec ul{
     width: 100%;
     height: 80%;
-    padding-top: 1rem;;
+    padding-top: 2rem;
+    position: absolute;
     overflow-y: scroll;
+    display: grid;
+    gap: 2.7rem;
+    padding: 0 5%;
 }
 
-.GasUnit{
+.GasRec ul li {
     background-color: var(--ter-color);
-    width: 90%;
-    height: 10%;
     border-radius: 15px;
-    margin: 6% auto;
+    height: calc(40vh/6);
+    position: relative;
+    display: flex;
+    padding: 0% 3%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.GasRec ul li .GasDat{
+
+    height: fit-content;
+    width: 270px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.GasRec ul li .GasDat i{
+    font-size: 1.2em;
+}
+
+.GasRec ul li .GasDat .GasName{
+    margin: 10px;
+    font-weight: 500;
+}
+
+.GasRec ul li .GasDate, .GasRec ul li .GasCos{
+    height: fit-content;
+    width: 100px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
 }

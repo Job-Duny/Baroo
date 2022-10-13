@@ -61,10 +61,26 @@ export const UserPf = ( { User }) => {
     )
 }
 
-export const Reciente = () => {
+export const Reciente = ( {gasto, value, date, icons} ) => {
+    
+
     return (
         <div className='GasUnit'>
+                <li>
+                    <div className="GasDat">
+                        <span className='GasIcon'>
+                            <i className={ icons }></i>
+                        </span>
+                        <span className='GasName'>{ gasto }</span> 
+                    </div>
+                    <span className="GasDate">{ date }</span>
+                    <span className="GasCos"> ${ value }</span>
+                </li>
+
+
+
             
+
         </div>
     )
 }
