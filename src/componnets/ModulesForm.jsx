@@ -84,3 +84,33 @@ export const Reciente = ( {gasto, value, date, icons} ) => {
         </div>
     )
 }
+
+
+//Botones de Registro de perfiles
+export const Perfil = ({icon,perfil,descripcion,des}) =>{
+
+    return(
+
+        <Link to={des}>
+
+            <button className="Bt-perfiles" type='submit'>
+
+                
+                <i className={icon} ></i>
+                <br></br>
+                
+
+                <div className="text">
+                    <h4>{perfil}</h4>
+                    <br></br>
+
+                    <p>{descripcion}</p>
+                </div>
+           </button>
+        </Link>
+
+    )
+
+}
+
+

@@ -1,3 +1,5 @@
+/*Job */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
@@ -515,3 +517,79 @@ form{
     color: white;
     font-weight: 500;
 }
+
+
+/* Sofia */
+
+/* Estilo botones de perfiles */
+
+.Bt-perfiles{
+
+    
+    background-color: #4CADCA;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+
+    border: none;
+    box-sizing: border-box;
+
+    width: 40%;
+    height: 200px;
+    padding: 2%;
+
+    left: calc(50% - 150px/2 - 250px);
+    top: calc(50% - 250px/2 + 200px);
+
+    margin: 4%;
+    float: left;
+
+    
+}
+
+.Bt-content{
+    
+    
+    width: 75%;
+    position: relative;
+    padding: 0.5%;
+    margin: 0 auto;
+    text-align: center;
+      
+}
+
+.Bt-perfiles i{
+    font-size: 600%;
+    float:left;
+    padding:6%;
+    margin-top: 0.2em;
+    color:#FFFFFF;
+}
+
+.text{
+    width: 60%;
+    float:left;
+    padding:5%;
+}
+
+.Bt-perfiles h4{
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 1em;
+    color:#FFFFFF;
+    font-weight: 500;
+}
+
+.Bt-perfiles p{
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9em;
+    text-align: center;
+    letter-spacing: 0.0075em;
+    color: #FFFFFF;
+    opacity: 0.65;
+}
+
+
