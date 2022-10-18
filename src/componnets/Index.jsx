@@ -10,8 +10,8 @@ export const Index = () => {
                 <div className="bir">
                     <img src={BaroLogo} alt="fondo" className="baro-img" />
                     <h1>Baro</h1>
-                    <Button value={'Entrar'} dest={'LogIn'} btnclass={'prime-btn'}></Button>
-                    <Button value={'Crear cuenta'} dest={'Signin'} btnclass={'sec-btn'}/>
+                    <Button value={'Entrar'} dest={'login'} btnclass={'prime-btn'}></Button>
+                    <Button value={'Crear cuenta'} dest={'signin'} btnclass={'sec-btn'}/>
                 </div>
                 
             </div>

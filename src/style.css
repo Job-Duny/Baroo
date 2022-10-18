@@ -547,8 +547,6 @@ form{
 }
 
 .Bt-content{
-    
-    
     width: 75%;
     position: relative;
     padding: 0.5%;
@@ -563,11 +561,15 @@ form{
     padding:6%;
     margin-top: 0.2em;
     color:#FFFFFF;
+    align-items: center;
+    align-content: center;
+    
 }
 
 .text{
-    width: 60%;
-    float:left;
+    position: relative;
+    width: 100%;
+    left: 0;
     padding:5%;
 }
 
@@ -581,13 +583,12 @@ form{
 }
 
 .Bt-perfiles p{
-    
+    width: 100%;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 1.2em;
     text-align: center;
-    letter-spacing: 0.0075em;
     color: #FFFFFF;
     opacity: 0.65;
 }

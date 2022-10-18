@@ -8,7 +8,7 @@ export const LogIn = () => {
           <div className="form-title">Iniciar sesión</div>
             <Entry Name={"Email"} Type={'Email'}></Entry>
             <Entry Name={"Contraseña"} Type={'Password'}></Entry>
-            <Button value={"Entrar"} dest={'../Home'} btnclass={"prime-btn"}/>
+            <Button value={"Entrar"} dest={'../home'} btnclass={"prime-btn"}/>
         </form>
       </div>
     </div>

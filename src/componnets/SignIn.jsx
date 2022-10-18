@@ -10,7 +10,7 @@ export const SignIn = () => {
                     <Entry Name={"Email"} Type={'Email'}></Entry>
                     <Entry Name={"Contraseña"} Type={'Password'}></Entry>
                     <Entry Name={"Confirmar contraseña"} Type={'Password'}></Entry>
-                    <Button value={"Continuar"} dest={'../Perfiles'} btnclass={"prime-btn"}/>
+                    <Button value={"Continuar"} dest={'../perfiles'} btnclass={"prime-btn"}/>
                 </form>
             </div>
         </div>
