@@ -242,14 +242,14 @@ form{
 
 .NavBarr{
     position: relative;
-    width:80px;
+    width:90px;
     height: 100vh;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    border-radius: 0 30px 30px 0;
+    border-radius: 0 40px 40px 0;
 }
 
 .NavBarr ul{
@@ -286,14 +286,23 @@ form{
     color: rgba(0, 0, 0, 0.2)
 }
 
-.NavBarr ul li.active a i{
+.NavBarr ul li:hover a .NavIcon i{
     transform: translateX(0);
+    color: var(--ter-color);
+    opacity: .8;
+}
+
+.NavBarr ul li a .NavIcon i{
+    opacity: 1;
+}
+
+.NavBarr ul li a .NavIconAct i{
     color: var(--ter-color);
 }
 
 .NavBarr ul li a .Navtext{
     position: absolute;
-    color: var(--sec-color);
+    color: var(--ter-color);
     padding: 2px 7px;
     border-radius: 12px;
     font-weight: bold;
@@ -301,6 +310,18 @@ form{
     letter-spacing: 0.05cm;
     transition: 0.5s;
     opacity: 0;
+}
+
+.NavBarr ul li a .NavtextShow{
+    position: absolute;
+    color: var(--ter-color);
+    padding: 2px 7px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.7em;
+    letter-spacing: 0.05cm;
+    opacity: 1;
+    text-transform: uppercase;
 }
 
 .NavBarr ul li:hover a .Navtext{
@@ -524,8 +545,6 @@ form{
 /* Estilo botones de perfiles */
 
 .Bt-perfiles{
-
-    
     background-color: var(--main-color);
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -552,7 +571,6 @@ form{
     padding: 0.5%;
     margin: 0 auto;
     text-align: center;
-      
 }
 
 .Bt-perfiles i{

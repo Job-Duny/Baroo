@@ -2,10 +2,9 @@ import { useState } from 'react'
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+///Botones
 export const Button = ( {value, dest, btnclass} ) => {
-
     const [name] = useState(value);
-
     return (
         <div>
             <Link to={ dest }>
@@ -17,8 +16,8 @@ export const Button = ( {value, dest, btnclass} ) => {
     )
 }
 
+//ittems
 export const Item = ( { secc, icons, sel } ) => {
-    
     return (
         <li className={ sel }>
             <Link>
@@ -31,9 +30,8 @@ export const Item = ( { secc, icons, sel } ) => {
     )
 }
 
-
+//Inputs 
 export const Entry = ( { Name, Type } ) => {
-
     return (
         <div className="login-container">
             <div className="login-group">
@@ -45,7 +43,7 @@ export const Entry = ( { Name, Type } ) => {
     )
 }
 
-
+//Usuario 
 export const UserPf = ( { User }) => {
     return (
         <div className='UserPf'>
@@ -60,10 +58,9 @@ export const UserPf = ( { User }) => {
         </div>
     )
 }
-
+//Gastos recientes
 export const Reciente = ( {gasto, value, date, icons} ) => {
     
-
     return (
         <div className='GasUnit'>
                 <li>
@@ -76,11 +73,6 @@ export const Reciente = ( {gasto, value, date, icons} ) => {
                     <span className="GasDate">{ date }</span>
                     <span className="GasCos"> ${ value }</span>
                 </li>
-
-
-
-            
-
         </div>
     )
 }
@@ -88,29 +80,48 @@ export const Reciente = ( {gasto, value, date, icons} ) => {
 
 //Botones de Registro de perfiles
 export const Perfil = ({icon,perfil,descripcion,des}) =>{
-
     return(
-
         <Link to={des}>
-
             <button className="Bt-perfiles" type='submit'>
-
-                
                 <i className={icon} ></i>
                 <br></br>
-                
-
                 <div className="text">
                     <h4>{perfil}</h4>
                     <br></br>
-
                     <p>{descripcion}</p>
                 </div>
-           </button>
+            </button>
         </Link>
-
     )
-
 }
 
+export const NavBar = () => {
+
+    const Menus = [
+        { Name:"Home", icon:"fa-solid fa-house"},        
+        { Name:"Graficas", icon:"fa-solid fa-chart-simple"},
+        { Name:"Frecuentes", icon:"fa-solid fa-dollar-sign"},
+        { Name:"Config", icon:"fa-solid fa-bars"},
+        { Name:"Salir", icon:"fa-solid fa-arrow-right-from-bracket"},
+    ]
+
+    const [active, setActive] = useState(0);
+
+    return (
+        <div className="NavBarr">
+            <ul>
+                {Menus.map((menu,i)=>(
+                        <li key={i}>
+                            <a onClick={() => setActive(i)} >
+                                <span className={`${ active === i ? 'NavIconAct' : 'NavIcon'}`}>
+                                    <i className={ menu.icon }></i>
+                                </span>
+                                <span className={` ${ active === i ? 'NavtextShow' : 'Navtext' }`}>{ menu.Name }</span>
+                            </a>
+                        </li>
+                    ))}
+            </ul>
+        </div>
+    )
+}
 

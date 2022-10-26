@@ -4,6 +4,7 @@ import { Index } from './Index'
 import { LogIn } from './LogIn'
 import { SignIn } from './SignIn'
 import { Perfiles} from './Perfiles'
+import { Graficas } from './Graficas'
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <Route path='signin' element={<SignIn/>}/>
         <Route path='home' element={<Home/>}/>
         <Route path='perfiles' element={<Perfiles/>}/>
+        <Route path='graficas' element={<Graficas/>}/>
     </Routes>
   )
 }

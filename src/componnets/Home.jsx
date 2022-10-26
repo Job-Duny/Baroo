@@ -1,5 +1,4 @@
-import { Item, UserPf, Reciente } from "./ModulesForm"
-
+import { Item, UserPf, Reciente, NavBar } from "./ModulesForm"
 
 export const Home = () => {
 
@@ -15,15 +14,7 @@ export const Home = () => {
   return (
     <>
       <div className="home-body">
-        <div className="NavBarr">
-          <ul>
-            <Item secc={'Config'} icons={'fa-solid fa-bars'} sel={'list'} />
-            <Item secc={'Cartera'} icons={'fa-solid fa-wallet'} sel={'list'} />
-            <Item secc={'Home'} icons={'fa-solid fa-house'} sel={'list active'} />
-            <Item secc={'Graficas'} icons={'fa-solid fa-chart-simple'} sel={'list'} />
-            <Item secc={'Notas'} icons={'fa-solid fa-bell'} sel={'list'} />
-          </ul>
-        </div>
+        <NavBar></NavBar>
         <div className="Balance">
           <UserPf User={"Gus of war"}></UserPf>
           <div className="BalanceDisp">
