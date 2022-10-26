@@ -116,11 +116,7 @@ export const NavBar = ({ initialActive }) => {
             setActive(initialActive)
         }
         
-        console.log("hola")
-
-        return ()=>{
-            setActive(null)
-        }
+        
 
     }, [])
 
