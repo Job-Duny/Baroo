@@ -112,11 +112,16 @@ export const NavBar = ({ initialActive }) => {
 
     useEffect(() => {
 
-        if (initialActive) {
-            setActive(initialActive)
+        let done = false
+        if (!done) {
+            if (initialActive) {
+                setActive(initialActive)
+            }
+
         }
-        
-        
+        return () => {
+            done = true
+        }
 
     }, [])
 
