@@ -1,31 +1,65 @@
 import { Entry, Button } from "./ModulesForm";
 import * as Yup from "yup";
-import { Form, Formik, useFormik } from "formik";
+import { Form, Formik } from "formik";
+import { createUser } from "../api/users.api";
+import { useNavigate } from "react-router-dom";
 
 export const LogIn = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-    },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .max(100, "El maximo número de caracteres es 100")
-        .required("El correo es requerido"),
-      contraseña: Yup.string().max(32).required("La contraseña es requerida"),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+  const nav = useNavigate();
   return (
     <div className="ali">
       <div className="form-cont">
-        <form>
-          <div className="form-title">Iniciar sesión</div>
-          <Entry Name={"Email"} Type={"Email"}></Entry>
-          <Entry Name={"Contraseña"} Type={"Password"}></Entry>
-          <Button value={"Entrar"} dest={"../home"} btnclass={"prime-btn"} />
-        </form>
+        <Formik
+          initialValues={{
+            correo: "",
+            contraseña: "",
+          }}
+          validationSchema={Yup.object({
+            correo: Yup.string()
+              .max(100, "El maximo numero de caracteres es de 100")
+              .email("Correo inválido")
+              .required("El correo es requerido"),
+
+            contraseña: Yup.string()
+              .min(8, "La contraseña debe ser mas larga")
+              .max(32, `El maximo numero de caracteres es ${32}`)
+              .required("La contraseña es requerida"),
+          })}
+          onSubmit={async (values) => {
+            const data = await createUser({
+              correo: values.correo,
+              contraseña: values.contraseña,
+            });
+            console.log(data);
+            //how to redirect and send information to the next page?
+            nav("/", { state: { data } });
+          }}
+        >
+          {(formik) => (
+            <form onSubmit={formik.handleSubmit}>
+              <div className="form-title">Iniciar sesión</div>
+              <Entry
+                Id={"correo"}
+                Name={"Correo"}
+                Type={"email"}
+                ExtraProps={formik.getFieldProps("correo")}
+              ></Entry>
+              {formik.touched.correo && formik.errors.correo ? (
+                <div>{formik.errors.correo}</div>
+              ) : null}
+              <Entry
+                Id={"contraseña"}
+                Name={"Contraseña"}
+                Type={"password"}
+                ExtraProps={formik.getFieldProps("contraseña")}
+              ></Entry>
+              {formik.touched.contraseña && formik.errors.contraseña ? (
+                <div>{formik.errors.contraseña}</div>
+              ) : null}
+              <Button value={"Entrar"} type={"submit"} btnclass={"prime-btn"} />
+            </form>
+          )}
+        </Formik>
       </div>
     </div>
   );
