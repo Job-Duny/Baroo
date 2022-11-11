@@ -32,7 +32,7 @@ export const LogIn = () => {
             });
             console.log(data);
             //how to redirect and send information to the next page?
-            nav("/", { state: { data } });
+            nav("/home", { state: { data } });
           }}
         >
           {(formik) => (
@@ -56,7 +56,11 @@ export const LogIn = () => {
               {formik.touched.contraseña && formik.errors.contraseña ? (
                 <div>{formik.errors.contraseña}</div>
               ) : null}
-              <Button value={"Entrar"} type={"submit"} btnclass={"prime-btn"} />
+              <Button
+                disabled={formik.isSubmitting}
+                value={formik.isSubmitting ? "Cargando..." : "Entrar"} 
+                type={"submit"}
+                btnclass={"prime-btn"} />
             </form>
           )}
         </Formik>

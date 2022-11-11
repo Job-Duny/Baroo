@@ -13,7 +13,7 @@ export const Index = () => {
                 <div className="bir">
                     <img src={BaroLogo} alt="fondo" className="baro-img" />
                     <h1>Baro</h1>
-                    {state.data.insertId ? (<h4>Inicie sesión para continuar</h4>) : null}
+                    {state?.data?.insertId ? (<h4>Inicie sesión para continuar</h4>) : null}
                     <Button value={'Entrar'} dest={'login'} btnclass={'prime-btn'}></Button>
                     <Button value={'Crear cuenta'} dest={'signin'} btnclass={'sec-btn'}/>
                 </div>

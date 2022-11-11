@@ -245,6 +245,7 @@ form{
     width:90px;
     height: 100vh;
     background-color: white;
+    box-shadow:  2px 2px 10px 1px rgba(0, 0, 0, 0.24);
     display: flex;
     justify-content: center;
     align-items: center;
